@@ -40,6 +40,7 @@ sections.forEach((section) => {
     removeActives(); 
    section.classList.add('active'); 
    // connect the link in the navbar with the active section, and add class'activeLink' to the link<a></a>
+      //m4 radyaaaa t4t8l !!!
    aLinks.forEach((a) => {
     if(a.textContent == section.getAttribute('data-nav')){
           removeActivesLink();
