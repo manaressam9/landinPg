@@ -10,6 +10,7 @@
 
 
 /* ---- Base Rules ---- */
+
 html{
     scroll-behavior: smooth;
 }
@@ -20,19 +21,48 @@ body {
     font-family: 'Merriweather', serif;
     color: #fff;
 }
-
-
+ /*scroll to top button*/
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: black;
+    box-shadow: 1px 1px  5px white;;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
-    font-size: 3em;
+    font-size: 7em;
     margin: 2em 1rem;
 }
-
-@media only screen and (min-width: 35em){
+@media only screen and (max-width: 540px){
     h1 {
-        font-size: 7em;
-        margin: 2em 4rem 1em;
+        font-size: 4em;  
+    }
+}
+
+@media only screen and (max-width: 411px){
+    h1 {
+        font-size: 5em;  
+    }
+}
+@media only screen and (max-width: 320px){
+    h1 {
+        font-size: 3em;
+        margin-top:4em
     }
 }
 
@@ -49,62 +79,59 @@ p {
 }
 
 /* ---- Layout Rules ---- */
-main {
-    margin: 10vh 1em 10vh;
-}
+
 
 .main-hero {
     min-height: 40vh;
     padding-top: 3em;
+    
 }
 
 section {
     position: relative;
     min-height: 80vh;
+      
 }
 
 
-/* ---- Module Rules ---- */
+
 
 /* Navigation Styles*/
-.activeLink{
-    background: rgb(0, 0, 0);
-    /*background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);*/
+
+.navbar-toggle .icon-bar{
+    background-color:white;
+    color:black
 }
-.navbar__menu ul {
-    padding-left: 0;
-    margin: 20px;
+
+.navbar__menu ul {    
     text-align: center;
+    padding-top: 5px;
 }
 
 .navbar__menu li {
     display: inline-block;
-    margin:10px;
+    
+    padding: 10px;
     
 }
 
-.navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
-    font-weight: bold;
-    text-decoration: none;
-    color: #000;
+a{
+    color:white
+}
+a:hover{
+  text-decoration: none;
+   color:white; 
 }
 
-.navbar__menu .menu__link:hover {
-    background: #333;
-    color: #fff;
-    transition: ease 0.3s all;
-}
-
-/* Header Styles */
-.page__header {
+.navbar {
     background: rgb(2, 1, 59);
     box-shadow:1px 1px  5px white;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
+    margin-bottom: 2em ;
+    
 }
 
 /* Footer Styles */
@@ -112,27 +139,25 @@ section {
     background: #000;
     padding: 3em;
     color: #fff;
+    
 }
 
 .page__footer p{
     color: #fff;
 }
 
-
-/* ---- Theme Rules ---- */
-
-/* Landing Container Styles */
+/* sections .. Landing Container Styles */
 .landing__container {
     padding: 1em;
     text-align: left;
 }
 
-@media only screen and (min-width: 35em){
+/*@media only screen and (min-width: 35em){
     .landing__container {
         max-width: 50em;
         padding: 4em;
     }
-}
+}*/
 
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
@@ -204,10 +229,13 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-
+   /*link active class*/
+.activeLink{
+    background: rgb(0, 0, 0);
+    
+}
 section.active{
     background: rgb(0, 0, 0);
-    /*background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);*/
 }
 
 section.active .landing__container::before {
